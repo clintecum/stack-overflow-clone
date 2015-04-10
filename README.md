@@ -1,12 +1,13 @@
-# Team Name:
-## Stack City
+# Team: Stack City
 
-## Team Members:
+## Members:
 #### Jordan
 #### Chris
 #### Zach
 
-## MVP User Stories:
+## User Stories:
+
+#### MVP
 
 As a User I want to post questions
 
@@ -41,3 +42,11 @@ As a User I want to see questions related to the question I'm viewing
 
 As a User I want a profile page where I can view all my questions, answers and comments
 
+### Wireframes:
+![Alt text]( http://i60.tinypic.com/mlp2tz.jpg) 
+![Alt text]( http://i62.tinypic.com/650201.jpg) 
+![Alt text]( http://i62.tinypic.com/zvvdz8.jpg) 
+![Alt text]( http://i60.tinypic.com/33kuaub.jpg) 
+![Alt text]( http://i59.tinypic.com/110fyty.jpg) 
+![Alt text]( http://i62.tinypic.com/20qauzd.jpg) 
+![Alt text]( http://i59.tinypic.com/23k2i2x.jpg) 
