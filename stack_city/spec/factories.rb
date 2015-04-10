@@ -13,3 +13,5 @@ FactoryGirl.define do
     body  "Dwyane is the Rock?"
     association :user, factory: :user, username: "IamDwyane"
   end
+end
+
