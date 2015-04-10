@@ -6,7 +6,9 @@ class User < ActiveRecord::Base
   has_many :favorites
   has_many :favorite_question, through: :favorites
 
-  validates :username, presence: true
-  validates :email, presence: true
-  validates :password,
+  validates :username, :email, :password, presence: true
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+
+
+
 end

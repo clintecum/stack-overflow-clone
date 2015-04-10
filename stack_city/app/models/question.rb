@@ -6,6 +6,18 @@ class Question < ActiveRecord::Base
   has_many :favorites
   has_one  :best_answer, class_name: "Answer"
 
+  validates :voted_once
+
+  def voted_once
+    users = []
+    votes.each do |vote|
+      users << vote.user.id
+    end
+    unless users.detect {|e| users.count(e) > 1}
+      return true
+    end
+  end
+
   def best_answer
     answers.best.first
   end

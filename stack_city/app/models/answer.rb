@@ -6,6 +6,8 @@ class Answer < ActiveRecord::Base
   has_many   :comments, as: :commentable
   validate :one_best_answer
 
+
+
   def self.best
     where(best: true)
   end
