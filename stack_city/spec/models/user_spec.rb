@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "User" do
-  user = FactoryGirl.create(:user)
+  user = FactoryGirl.build(:user)
   it "should exist" do
       expect(user).to_not be(nil)
     end
@@ -18,3 +18,5 @@ describe "User" do
     expect(FactoryGirl.build(:user, email: "5.com")).to_not be_valid
     end
   end
+
+

@@ -5,6 +5,7 @@ class Question < ActiveRecord::Base
   has_many :answers
   has_many :favorites
   has_one  :best_answer, class_name: "Answer"
+  validates :user, :body, :title,  presence: true
 
   validate :voted_once
 
