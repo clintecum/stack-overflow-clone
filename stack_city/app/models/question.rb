@@ -6,7 +6,7 @@ class Question < ActiveRecord::Base
   has_many :favorites
   has_one  :best_answer, class_name: "Answer"
 
-  validates :voted_once
+  validate :voted_once
 
   def voted_once
     users = []
