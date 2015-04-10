@@ -23,9 +23,9 @@ FactoryGirl.define do
   end
 
   factory :user do
-    username "Username"
-    email "poop@poop.com"
-    password_digest "poop"
+    username "IamDwyane"
+    email "myemail@gmail.com"
+    password "poop"
 
     factory :user_with_questions do
       transient do
