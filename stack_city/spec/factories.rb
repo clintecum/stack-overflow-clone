@@ -1,15 +1,46 @@
 FactoryGirl.define do
-  factory :user do
-    username "IamDwyane"
-    email   "myemail@gmail.com"
-    first_name "Dwyane"
-    last_name  "Dwyane"
-    location   "Georgia"
-    password   "1234"
+
+  factory :answer do
+    content "Answer Content"
+    question
+    user
   end
 
   factory :question do
-    title "What is Dwyane?"
-    body  "Dwyane is the Rock?"
-    association :user, factory: :user, username: "IamDwyane"
+    title "Question Title"
+    body "Question Body"
+    user
+
+    factory :question_with_answers do
+      transient do
+        answers_count 2
+      end
+
+      after(:create) do |question, evaluator|
+        create_list(:answer, evaluator.answers_count, question: question)
+      end
+    end
+  end
+
+  factory :user do
+    username "Username"
+    email "poop@poop.com"
+    password_digest "poop"
+
+    factory :user_with_questions do
+      transient do
+        questions_count 5
+      end
+
+      factory :user_with_answers do
+        transient do
+          answers_count 5
+        end
+
+        after(:create) do |user, evaluator|
+          create_list(:question, evaluator.questions_count, user: user)
+          create_list(:answer, evaluator.answers_count, user: user)
+        end
+      end
+    end
   end
