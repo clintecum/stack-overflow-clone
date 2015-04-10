@@ -1,7 +1,6 @@
 class Answer < ActiveRecord::Base
   belongs_to :user
   belongs_to :question
-  belongs_to :question, as: :best_answer
   has_many   :votes, as: :voteable
   has_many   :comments, as: :commentable
   validate :one_best_answer
