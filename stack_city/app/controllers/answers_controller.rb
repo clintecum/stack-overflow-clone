@@ -6,9 +6,9 @@ class AnswersController < ApplicationController
   end
 
   def create
-   @user = current_user
+   @user = User.find(params[:user])
     @question = Question.find(params[:question_id])
-    @answer =  @user.answers.create(content: params[:content], question_id: @question.id)
+    @answer =  @user.answers.create(content: params[:content], question_id: @question)
     if @answer
       redirect_to @question, status: 201
     else
