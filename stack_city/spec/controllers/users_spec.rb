@@ -26,8 +26,11 @@ describe UsersController do
     #google more.
     xit "should update user info from given params" do
         user = FactoryGirl.create(:user)
+        puts user.inspect
         expect{
-        put :update, { id: user.id, user: {email:  "john.doe@example1.com"}}}.to change(user, :email)
+        put :update, { user: {id: user.id, email:  "john.doe@example1.com"}}
+          user.reload
+          }.to change(user, :email)
         end
     end
 
