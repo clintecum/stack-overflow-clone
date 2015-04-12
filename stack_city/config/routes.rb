@@ -11,11 +11,10 @@ Rails.application.routes.draw do
     end
 
     resources :questions 
+
+  get    'signup'  => 'users#new'
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+
 end
-
-# /questions/id 
-# /questions
-# /quesitons/new
-# /quesitons/edit
-# /questions/id/answers/
-
