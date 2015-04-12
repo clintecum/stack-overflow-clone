@@ -49,12 +49,13 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.1)
+    coffee-script-source (1.9.1.1)
+    colored (1.2)
     columnize (0.9.0)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
-    execjs (2.5.1)
+    execjs (2.5.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.5.0)
@@ -62,9 +63,8 @@ GEM
       railties (>= 3.0.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
-    hike (1.2.3)
     i18n (0.7.0)
-    jbuilder (2.2.12)
+    jbuilder (2.2.13)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (4.0.3)
@@ -115,13 +115,17 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+<<<<<<< HEAD
     rspec (3.2.0)
       rspec-core (~> 3.2.0)
       rspec-expectations (~> 3.2.0)
       rspec-mocks (~> 3.2.0)
     rspec-core (3.2.2)
+=======
+    rspec-core (3.2.3)
+>>>>>>> 9b00096a14afbec0c1622e9ddc72ac58ebc7d9b9
       rspec-support (~> 3.2.0)
-    rspec-expectations (3.2.0)
+    rspec-expectations (3.2.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
     rspec-mocks (3.2.1)
@@ -146,18 +150,24 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+<<<<<<< HEAD
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
     spring (1.3.4)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
+=======
+    sprockets (3.0.0)
+>>>>>>> 9b00096a14afbec0c1622e9ddc72ac58ebc7d9b9
       rack (~> 1.0)
-      tilt (~> 1.1, != 1.3.0)
     sprockets-rails (2.2.4)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    tabulous (2.1.3)
+      colored (~> 1.2.0)
+      rails (>= 3.0, < 5.0.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -188,7 +198,11 @@ DEPENDENCIES
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+<<<<<<< HEAD
   shoulda-matchers
   spring
+=======
+  tabulous
+>>>>>>> 9b00096a14afbec0c1622e9ddc72ac58ebc7d9b9
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
