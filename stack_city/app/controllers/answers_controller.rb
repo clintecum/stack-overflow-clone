@@ -1,12 +1,12 @@
 class AnswersController < ApplicationController
 
   def index
-      @answers = Answer.find_by(user_id: params[:user_id])
+      @answers = Answer.where(user_id: params[:user_id])
       render 'index'
   end
 
   def create
-   @user = User.find(params[:user])
+   @user = current_user
     @question = Question.find(params[:question_id])
     @answer =  @user.answers.create(content: params[:content], question_id: @question)
     if @answer

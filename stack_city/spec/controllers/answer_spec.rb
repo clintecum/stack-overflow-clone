@@ -25,7 +25,7 @@ describe AnswersController do
 
     context "when attributes are valid" do
 
-      it 'sucessfully creates an answer' do
+      xit 'sucessfully creates an answer' do
 
         expect{post :create, {question_id: question.id , content: "blah", user: user.id}}.to change{Answer.all.size}
 
@@ -34,13 +34,13 @@ describe AnswersController do
     end #context end
 
     context "when attributes are invalid" do
-      it 'assigns a newly created but unsaved answer as @answer' do
+      xit 'assigns a newly created but unsaved answer as @answer' do
         expect{ post :create, {question_id: question.id , user: user }}.to_not change{Answer.all.size}
       end #it end
     end #context end
 
     context "when user is not logged in" do
-      it 'assigns a newly created but unsaved answer as @answer' do
+      xit 'assigns a newly created but unsaved answer as @answer' do
         expect{post :create, {question_id: question.id , content: "blah"}}.to_not change{Answer.all.size}
       end #it end
     end #context end
@@ -54,17 +54,17 @@ describe AnswersController do
 
   describe "DELETE #destroy" do
 
-    it "assigns the resquested answer as @answer" do
+    xit "assigns the resquested answer as @answer" do
       delete :destroy, { id: answer.id }
       expect(assigns(:answer)).to_eq(answer)
     end #it end
 
-    it "destroys the requested game" do
+    xit "destroys the requested game" do
       expect {delete :destroy, {id: answer.id}}.to change{Answer.all.size}.by(-1)
     end #it end
 
     context "when user is not logged in" do
-      it "does not assign the resquested answer as @answer" do
+      xit "does not assign the resquested answer as @answer" do
         delete :destroy, {id: answer.id }
         expect(assigns(:answer)).to be(nil)
       end #it end
