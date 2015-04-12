@@ -15,15 +15,16 @@ class VotesController < ApplicationController
     @vote = current_user.votes.find_by(voteable_type: @klass, voteable_id: @voteable)
     if @vote
       @vote.update_attributes()
-  end
+    end
 
-  def destroy
+    def destroy
 
-  end
+    end
 
-  private
-  def find_voteable
-    @klass = params[:voteable_type].capitalize.constantize
-    @voteable = klass.find(params[:voteable_id])
+    private
+    def find_voteable
+      @klass = params[:voteable_type].capitalize.constantize
+      @voteable = klass.find(params[:voteable_id])
+    end
   end
 end
