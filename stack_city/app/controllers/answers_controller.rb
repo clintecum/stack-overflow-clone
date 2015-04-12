@@ -6,23 +6,28 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @answer = Answer.new(question: params[:id], user: current_user, content: params[:content])
+    @question = Question.find(params[:question_id])
+    @answer = Answer.new(question: @question, user: current_user, content: params[:content])
     if @answer.save
-
+      redirect_to @question, status: 201
     else
-
+      redirect_to @question, status: 400
     end
   end
 
   def update
-    answer = Answer.find_by(id: params[:answer_id])
-    answer.update!(answer_params)
+    @question = Question.find(params[:question_id])
+    @answer = Answer.find_by(id: params[:id])
+    @answer.update!(answer_params)
+    redirect @answer, status: 202
   end
 
   def destroy
-    @answer = Answer.find_by(id: params[:answer_id])
+    @question = Question.find(params[:question_id])
+    @answer = Answer.find_by(id: params[:id])
     if @answer.id == current_user.id 
       @answer.destroy 
+      redirect @question, status: 202
     else
       user_not_authorized
     end
