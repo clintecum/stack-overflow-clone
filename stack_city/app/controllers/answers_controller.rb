@@ -1,12 +1,8 @@
 class AnswersController < ApplicationController
 
   def index
-    case params
-    when params[:id]#viewing question answers
-      @answers = Answer.find_by(question: params[:id])
-    when params[:user_id] #viewing user answers
-      @answers = Answer.find_by(user: params[:user_id])
-    end
+      @answers = Answer.find_by(user_id: params[:user_id])
+      render 'index'
   end
 
   def create

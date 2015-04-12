@@ -1,20 +1,14 @@
 require 'rails_helper'
 
 describe AnswersController do
-  let!(:user)  {FactoryGirl.build(:user)}
-  let!(:answer) {FactoryGirl.build(:answer)}
+  let!(:user)  {FactoryGirl.create(:user)}
 
   describe "GET #index" do
-    context "when on questions page" do
-      it "assigns all the question's answers to @answers" do
-        get :index, {id: 1}
-        expect(assigns(:answers)).to_not be(nil)
-        #not sure how to test to see that each answer has question_id
-      end # it end
-    end #context end
     context "when on users page" do
+      
       it "assigns all the question's answers to @answers" do
-        get :index, {user_id: 1}
+        FactoryGirl.create(:answer, user: user )
+        get :index, {user_id: user.id}
         expect(assigns(:answers)).to_not be(nil)
         #not sure how to test to see that each answer has user_id
       end #it end
