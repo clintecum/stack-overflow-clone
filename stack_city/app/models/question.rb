@@ -23,4 +23,11 @@ class Question < ActiveRecord::Base
     answers.best.first
   end
 
+  def self.vote_count
+    vote_count = []
+    votes.each do |vote|
+      vote_count << vote
+    end
+  end
+
 end
