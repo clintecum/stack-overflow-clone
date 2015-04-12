@@ -41,10 +41,7 @@ class CommentsController < ApplicationController
     end
 
     def find_commentable
-      if params[:question_id]
-        @commentable = Question.find(params[:question_id])
-      elsif params[:answer_id]
-        @commentable = Answer.find(params[:answer_id])
-      end
+      @klass = params[:commentable_type].capitalize.constantize
+      @commentable = klass.find(params[:commentable_id])
     end
 end

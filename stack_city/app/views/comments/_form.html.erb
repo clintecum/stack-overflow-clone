@@ -1,1 +1,8 @@
-_form.html.erb
+<%= form_for([@commentable, @commentable.comments.build]) do |f| %>
+
+  <%= f.label :content %>
+  <%= f.text_field %>
+
+  <%= f.submit %>
+
+<% end %>
