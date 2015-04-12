@@ -10,12 +10,13 @@ Rails.application.routes.draw do
       resources :favorites, only: :index
     end
 
-    resources :questions 
+    resources :questions do
+      resources :answers
+    end
+
+  get    'signup'  => 'users#new'
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+
 end
-
-# /questions/id 
-# /questions
-# /quesitons/new
-# /quesitons/edit
-# /questions/id/answers/
-

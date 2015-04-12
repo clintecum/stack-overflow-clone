@@ -24,10 +24,13 @@ class Question < ActiveRecord::Base
   end
 
   def self.vote_count
-    vote_count = []
-    votes.each do |vote|
-      vote_count << vote
+    votes = []
+    self.all.each do |question|
+      question.votes.each do |vote|
+        votes << vote
+      end
     end
+    votes.count
   end
 
 end
