@@ -6,9 +6,10 @@ class AnswersController < ApplicationController
   end
 
   def create
+   @user = User.find(params[:user])
     @question = Question.find(params[:question_id])
-    @answer = Answer.new(question: @question, user: current_user, content: params[:content])
-    if @answer.save
+    @answer =  @user.answers.create(content: params[:content], question_id: @question)
+    if @answer
       redirect_to @question, status: 201
     else
       redirect_to @question, status: 400
