@@ -1,0 +1,75 @@
+<h1> Stack City </h1>
+
+ <div class="container">
+
+    <ul class="tabs">
+        <li class="active"><a href="#tab1">All Questions</a></li>
+        <li><a href="#tab2">Most Votes</a></li>
+        <li><a href="#tab3">Most Comments</a></li>
+    </ul>
+
+    <div class="tab" id="tab1">
+            <table>
+                <tr>
+                  <th>Title</th>
+                  <th>Comments</th>
+                  <th>Answers</th>
+                  <th>Votes</th>
+                  <th colspan = "2"></th>
+                </tr>
+
+          <% @questions.each do |question| %>
+            <tr>
+              <td><%= question.title %></td>
+              <td><%= question.comments.count %></td>
+              <td><%= question.answers.count %></td>
+              <td><%= question.votes.count %></td>
+            </tr>
+            <% end %>
+        </table>
+
+
+    </div>
+
+    <div class="tab" id="tab2">
+         <table>
+                <tr>
+                  <th>Title</th>
+                  <th>Comments</th>
+                  <th>Answers</th>
+                  <th>Votes</th>
+                  <th colspan = "2"></th>
+                </tr>
+          <% most_votes = Question.order(" DESC") %>
+          <% most_votes.each do |question| %>
+            <tr>
+              <td><%= question.title %></td>
+              <td><%= question.comments.count %></td>
+              <td><%= question.answers.count %></td>
+              <td><%= question.votes.count %></td>
+            </tr>
+            <% end %>
+        </table>
+    </div>
+
+    <div class="tab" id="tab3">
+         <table>
+                <tr>
+                  <th>Title</th>
+                  <th>Comments</th>
+                  <th>Answers</th>
+                  <th>Votes</th>
+                  <th colspan = "2"></th>
+                </tr>
+
+          <% @questions.each do |question| %>
+            <tr>
+              <td><%= question.title %></td>
+              <td><%= question.comments.count %></td>
+              <td><%= question.answers.count %></td>
+              <td><%= question.votes.count %></td>
+            </tr>
+            <% end %>
+        </table>
+    </div>
+</div>
