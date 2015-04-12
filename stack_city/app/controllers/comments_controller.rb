@@ -1,17 +1,18 @@
 class CommentsController < ApplicationController
+  before_filter :find_commentable
 
   def show
     @comment = Comment.find(params[:id])
   end
 
   def new
-    @question = Question.find(params[:id])
-    @comment = @question.comments.new
+    @commentable = find_commentable
+    @comment = @commentable.comments.new
   end
 
   def create
-    @question = Question.find(params[:id])
-    @comment = @question.comments.create(comment_params)
+    @commentable = find_commentable
+    @comment = @commentable.comments.create(comment_params)
     if @comment.save
       redirect_to @comment
     else
@@ -37,5 +38,13 @@ class CommentsController < ApplicationController
   private
     def comment_params
       params.require(:comment).permit(:content)
+    end
+
+    def find_commentable
+      if params[:question_id]
+        @commentable = Question.find(params[:question_id])
+      elsif params[:answer_id]
+        @commentable = Answer.find(params[:answer_id])
+      end
     end
 end

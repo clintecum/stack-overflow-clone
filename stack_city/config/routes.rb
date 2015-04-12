@@ -10,10 +10,11 @@ Rails.application.routes.draw do
       resources :favorites, only: :index
     end
 
-    resources :questions 
+    resources :comments
+    resources :questions
 end
 
-# /questions/id 
+# /questions/id
 # /questions
 # /quesitons/new
 # /quesitons/edit

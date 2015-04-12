@@ -1,11 +1,13 @@
 class FavoritesController < ApplicationController
+  before_filter :find_favorable
 
   def show
     @favorite = Favorite.find(params[:id])
   end
 
   def new
-    @favorite = Favorite.new
+    @user = User.find(params[:id])
+    @favorite = @user.favorites.new
   end
 
   def create
@@ -28,5 +30,15 @@ class FavoritesController < ApplicationController
   private
     def favorite_params
       params.require(:favorites)
+    end
+
+    def find_favorable
+      if params[:question_id]
+        @favorable = Question.find(params[:question_id])
+      elsif params[:answer_id]
+        @favorable = Answer.find(params[:answer_id])
+      elsif params[:comment_id]
+        @favorable = Comment.find(params[:comment_id])
+      end
     end
 end
