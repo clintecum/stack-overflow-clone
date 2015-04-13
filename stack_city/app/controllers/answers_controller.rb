@@ -7,12 +7,13 @@ class AnswersController < ApplicationController
 
   def create
    @user = current_user
+   puts params
     @question = Question.find(params[:question_id])
-    @answer =  @user.answers.create(content: params[:content], question_id: @question)
-    if @answer
-      redirect_to @question, status: 201
+    @answer =  @question.answers.create(content: params[:answer])
+    if @answer.save
+      redirect_to @question
     else
-      redirect_to @question, status: 400
+      redirect_to @question
     end
   end
 
@@ -26,8 +27,8 @@ class AnswersController < ApplicationController
   def destroy
     @question = Question.find(params[:question_id])
     @answer = Answer.find_by(id: params[:id])
-    if @answer.id == current_user.id 
-      @answer.destroy 
+    if @answer.id == current_user.id
+      @answer.destroy
       redirect @question, status: 202
     else
       user_not_authorized

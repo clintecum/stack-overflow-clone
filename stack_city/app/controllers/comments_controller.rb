@@ -6,15 +6,19 @@ class CommentsController < ApplicationController
   end
 
   def new
+    puts params
     @commentable = find_commentable
+    # @comment = @commentable.comments.new
+    # @commentable = Question.find(params[:id])
     @comment = @commentable.comments.new
   end
 
   def create
-    @commentable = find_commentable
+    puts params
+    @commentable = Question.find_by(id: params[:question_id])
     @comment = @commentable.comments.create(comment_params)
     if @comment.save
-      redirect_to @comment
+      redirect_to @commentable
     else
       render 'new'
     end
@@ -41,7 +45,9 @@ class CommentsController < ApplicationController
     end
 
     def find_commentable
-      @klass = params[:commentable_type].capitalize.constantize
-      @commentable = klass.find(params[:commentable_id])
+      puts params
+      @commentable = params[:question_id]
+      # @klass = params[:commentable_type].capitalize.constantize
+      # @commentable = @klass.find(params[:commentable_id])
     end
 end

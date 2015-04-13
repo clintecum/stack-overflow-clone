@@ -1,1 +1,12 @@
-
+<%= @question.title %><br>
+<%=@question.body %>
+<h3>Comments:</h3>
+<%@question.comments.each do |c|%>
+  <%=c.content%><br>
+<%end%>
+<%= render :partial => 'comments/form', :locals => { :commentable => @question } %>
+<h3>Answers:</h3>
+<%@question.answers.each do |a|%>
+<%= a.content %>
+<% end %>
+<%= render :partial => 'answers/form' %>

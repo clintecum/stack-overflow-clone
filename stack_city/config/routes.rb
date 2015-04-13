@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
     resources :questions do
       resources :answers
+      resources :comments
     end
+
 
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
