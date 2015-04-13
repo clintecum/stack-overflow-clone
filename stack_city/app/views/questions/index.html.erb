@@ -31,7 +31,7 @@
     </div>
 
     <div class="tab" id="tab2">
-         <table>
+          <table>
                 <tr>
                   <th>Votes</th>
                   <th>Answers</th>
@@ -39,8 +39,8 @@
                   <th>Title</th>
                   <th colspan = "2"></th>
                 </tr>
-          <% most_votes = Question.order("vote_count") %>
-          <% most_votes.each do |question| %>
+
+          <% @questions.each do |question| %>
             <tr>
               <td><%= question.votes.count %></td>
               <td><%= question.answers.count %></td>
@@ -49,6 +49,7 @@
             </tr>
             <% end %>
         </table>
+
     </div>
 
     <div class="tab" id="tab3">

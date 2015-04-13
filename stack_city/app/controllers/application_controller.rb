@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
 
-
   private
   def current_user
     @_current_user ||= session[:current_user_id] &&
@@ -16,9 +15,4 @@ class ApplicationController < ActionController::Base
     flash[:error] = "You don't have access to this section."
     redirect_to :back
   end
-
-
-  include SessionsHelper
-
-
 end
