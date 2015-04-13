@@ -1,0 +1,30 @@
+<%= form_for([@user, @question]) do |f| %>
+<div class="questions">
+
+
+  <!-- <table>
+    <thead>
+      <th>Fucking</th>
+      <th>Hell</th>
+    </thead>
+    <tbody>
+      <tr></tr>
+    </tbody>
+ -->
+
+    <div class="input">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    </div>
+
+    <div class="input">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+    </div>
+
+    <div class="input">
+    <%= f.submit %>
+    </div>
+ <!--  </table> -->
+</div>
+<% end %>

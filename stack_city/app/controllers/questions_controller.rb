@@ -9,12 +9,14 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    puts session[:user_id]
     @question = Question.new
   end
 
   def create
     @user = current_user
     @question = @user.questions.create(question_params)
+    redirect_to @question
   end
 
   def edit
