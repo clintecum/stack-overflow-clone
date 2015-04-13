@@ -1,11 +1,10 @@
-
-
-<%= form_for @user url: {action: "update"}, html: {class: "user", id: "new_user"} do |f| %>
+<h1>Sign Up!</h1>
+<%= form_for @user do |f| %>
   Username:  <%= f.text_field :username %>
   Email:  <%= f.text_field :email %>
   Password:  <%= f.text_field :password %>
   First name: <%= f.text_field :first_name %>
   Last name: <%= f.text_field :last_name %>
   Location: <%= f.text_field :location %>
-  <%= f.submit "Confirm Edits" %>
+  <%= f.submit "Create Account" %>
 <% end %>

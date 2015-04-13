@@ -32,7 +32,7 @@
     </div>
 
     <div class="tab" id="tab2">
-         <table>
+          <table>
                 <tr>
                   <th>Title</th>
                   <th>Comments</th>
@@ -40,8 +40,8 @@
                   <th>Votes</th>
                   <th colspan = "2"></th>
                 </tr>
-          <% most_votes = Question.order(" DESC") %>
-          <% most_votes.each do |question| %>
+
+          <% @questions.each do |question| %>
             <tr>
               <td><%= question.title %></td>
               <td><%= question.comments.count %></td>
@@ -50,6 +50,7 @@
             </tr>
             <% end %>
         </table>
+
     </div>
 
     <div class="tab" id="tab3">
