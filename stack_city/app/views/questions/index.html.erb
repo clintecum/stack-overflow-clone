@@ -25,7 +25,7 @@
               <td><%= question.votes.count %></td>
               <td><%= question.answers.count %></td>
               <td><%= question.comments.count %></td>
-              <td><%= question.title%><br><%= question.body %></td>
+              <td><a href="/questions/<%= question.id %>"><%= question.title%></a></td>
             </tr>
             <% end %>
         </table>
@@ -48,7 +48,7 @@
               <td><%= question.votes.count %></td>
               <td><%= question.answers.count %></td>
               <td><%= question.comments.count %></td>
-              <td><%= question.title%><br><%= question.body %></td>
+              <td><a href="/questions/<%= question.id %>"><%= question.title%></a></td>
 
             </tr>
             <% end %>
@@ -71,7 +71,7 @@
               <td><%= question.votes.count %></td>
               <td><%= question.answers.count %></td>
               <td><%= question.comments.count %></td>
-              <td><%= question.title%></td>
+              <td><a href="/questions/<%= question.id %>"><%= question.title%></a></td>
             </tr>
             <% end %>
         </table>

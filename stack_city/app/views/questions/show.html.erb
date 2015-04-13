@@ -6,7 +6,7 @@
 <%end%>
 <%= render :partial => 'comments/form', :locals => { :commentable => @question } %>
 <h3>Answers:</h3>
-<%@question.answers.each do |a|%>
+<% @question.answers.each do |a|%>
 <%= a.content %>
 <% end %>
 <%= render :partial => 'answers/form' %>
