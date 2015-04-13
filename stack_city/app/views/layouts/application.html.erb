@@ -11,28 +11,12 @@
       <div id="login" >
         <% if logged_in? %>
         <div id="logoutContainer">
-          <button type="button" id="logout_button">Log Out</button>
+          <%= link_to "logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete%>
+
         </div>
         <% else %>
         <div id="loginContainer">
-                <a href="#" id="loginButton"><span>Login</span><em></em></a>
-                <div style="clear:both"></div>
-                <div id="loginBox">                
-                    <form id="loginForm">
-                        <fieldset id="body">
-                            <fieldset>
-                                <label for="email">Email Address</label>
-                                <input type="text" name="email" id="email" />
-                            </fieldset>
-                            <fieldset>
-                                <label for="password">Password</label>
-                                <input type="password" name="password" id="password" />
-                            </fieldset>
-                            <input type="submit" id="login" value="Sign in" />
-                            
-                        </fieldset>
-                    </form>
-                </div>
+                <%= link_to "login", {:controller=> "sessions", :action=> "new"}, :method => :get%>
             </div>
         <% end %>
       </div>

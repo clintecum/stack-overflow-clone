@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
-  respond_to :json
 
   def new
+    render "new"
   end
 
   def create
@@ -13,12 +13,15 @@ class SessionsController < ApplicationController
       flash.now[:danger] = 'Invalid email/password combination'
       render "new"
     end
+  end
 
-    def destroy
-      log_out if logged_in?
-      redirect_to root_url
+  def destroy
+    if logged_in?
+      log_out
     end
-
+    redirect_to root_url
   end
 
 end
+
+

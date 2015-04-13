@@ -20,7 +20,7 @@
 
           <% @questions.each do |question| %>
             <tr>
-              <td><%= question.title %></td>
+              <td><a href="/questions/<%= question.id %>"><%= question.title %></a></td>
               <td><%= question.comments.count %></td>
               <td><%= question.answers.count %></td>
               <td><%= question.votes.count %></td>
@@ -43,7 +43,7 @@
 
           <% @questions.each do |question| %>
             <tr>
-              <td><%= question.title %></td>
+              <td><a href="/questions/<%= question.id %>"><%= question.title %></a></td>
               <td><%= question.comments.count %></td>
               <td><%= question.answers.count %></td>
               <td><%= question.votes.count %></td>
@@ -65,7 +65,7 @@
 
           <% @questions.each do |question| %>
             <tr>
-              <td><%= question.title %></td>
+              <td><a href="/questions/<%= question.id %>"><%= question.title %></a></td>
               <td><%= question.comments.count %></td>
               <td><%= question.answers.count %></td>
               <td><%= question.votes.count %></td>
