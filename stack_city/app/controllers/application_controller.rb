@@ -2,7 +2,9 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+
   include SessionsHelper
+
 
   private
   def current_user
@@ -14,4 +16,9 @@ class ApplicationController < ActionController::Base
     flash[:error] = "You don't have access to this section."
     redirect_to :back
   end
+
+
+  include SessionsHelper
+
+
 end
