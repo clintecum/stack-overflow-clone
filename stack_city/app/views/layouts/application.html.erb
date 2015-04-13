@@ -19,7 +19,14 @@
                 <%= link_to "login", {:controller=> "sessions", :action=> "new"}, :method => :get%>
             </div>
         <% end %>
+
       </div>
+      <form action="/questions">
+        <input type="submit" value="View Questions">
+      </form>
+      <form action="/users" >
+        <input type="submit" value="View Users">
+      </form>
     </div>
     <%= yield %>
   </body>

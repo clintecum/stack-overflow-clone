@@ -1,0 +1,23 @@
+<table> 
+  <thead>
+    <th>Avatar</th>
+    <th>UserName</th>
+    <th>Location</th>
+  </thead>
+  <tbody>
+<% @users.each do |user| %>
+<tr>
+  <td>
+  <img src="<%= user.avatar %>" >
+</td>
+<td>
+  <%= user.username %>
+   </td>
+<td>
+  <%= user.location %>
+</td>
+</tr>
+<% end %>
+</tbody>
+
+</table>

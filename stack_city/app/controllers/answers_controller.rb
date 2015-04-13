@@ -7,12 +7,13 @@ class AnswersController < ApplicationController
 
   def create
    @user = current_user
-    @question = Question.find(params[:question_id])
-    @answer =  @user.answers.create(content: params[:content], question_id: @question)
-    if @answer
-      redirect_to @question, status: 201
+   puts params
+    @question = Question.find(params[:id])
+    @answer =  @question.answers.create(content: params[:answer])
+    if @answer.save
+      redirect_to @question
     else
-      redirect_to @question, status: 400
+      redirect_to @question
     end
   end
 
