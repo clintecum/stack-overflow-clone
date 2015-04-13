@@ -9,44 +9,42 @@
     </ul>
 
     <div class="tab" id="tab1">
-            <table>
+           <table>
                 <tr>
-                  <th>Title</th>
-                  <th>Comments</th>
-                  <th>Answers</th>
                   <th>Votes</th>
+                  <th>Answers</th>
+                  <th>Comments</th>
+                  <th>Title</th>
                   <th colspan = "2"></th>
                 </tr>
-
-          <% @questions.each do |question| %>
+          <% most_votes = Question.order("vote_count") %>
+          <% most_votes.each do |question| %>
             <tr>
-              <td><%= question.title %></td>
-              <td><%= question.comments.count %></td>
-              <td><%= question.answers.count %></td>
               <td><%= question.votes.count %></td>
+              <td><%= question.answers.count %></td>
+              <td><%= question.comments.count %></td>
+              <td><%= question.title%></td>
             </tr>
             <% end %>
         </table>
-
-
     </div>
 
     <div class="tab" id="tab2">
          <table>
                 <tr>
-                  <th>Title</th>
-                  <th>Comments</th>
-                  <th>Answers</th>
                   <th>Votes</th>
+                  <th>Answers</th>
+                  <th>Comments</th>
+                  <th>Title</th>
                   <th colspan = "2"></th>
                 </tr>
-          <% most_votes = Question.order(" DESC") %>
+          <% most_votes = Question.order("vote_count") %>
           <% most_votes.each do |question| %>
             <tr>
-              <td><%= question.title %></td>
-              <td><%= question.comments.count %></td>
-              <td><%= question.answers.count %></td>
               <td><%= question.votes.count %></td>
+              <td><%= question.answers.count %></td>
+              <td><%= question.comments.count %></td>
+              <td><%= question.title%></td>
             </tr>
             <% end %>
         </table>
@@ -55,19 +53,19 @@
     <div class="tab" id="tab3">
          <table>
                 <tr>
-                  <th>Title</th>
-                  <th>Comments</th>
-                  <th>Answers</th>
                   <th>Votes</th>
+                  <th>Answers</th>
+                  <th>Comments</th>
+                  <th>Title</th>
                   <th colspan = "2"></th>
                 </tr>
-
-          <% @questions.each do |question| %>
+          <% most_votes = Question.order("vote_count") %>
+          <% most_votes.each do |question| %>
             <tr>
-              <td><%= question.title %></td>
-              <td><%= question.comments.count %></td>
-              <td><%= question.answers.count %></td>
               <td><%= question.votes.count %></td>
+              <td><%= question.answers.count %></td>
+              <td><%= question.comments.count %></td>
+              <td><%= question.title%></td>
             </tr>
             <% end %>
         </table>

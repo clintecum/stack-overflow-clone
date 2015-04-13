@@ -2,6 +2,7 @@ class VotesController < ApplicationController
   before_filter :find_voteable
 
   def create
+    @question = Question.find_by(id: params)
     @vote = current_user.votes.build(params[:votes])
     if @vote.save
 

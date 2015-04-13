@@ -1,0 +1,28 @@
+<table id="answer_table">
+  <thead>
+    <th>
+      Question Title
+    </th>
+    <th>
+      Question Author
+    </th>
+    <th>
+      Question Votes
+    </th>
+    <th>
+      Answer Votes
+    </th>
+    <th>
+      Link
+    </th>
+  </thead>
+<% @answers.each do |answer| %>
+<tr>
+  <td><%= answer.question.title %></td>
+  <td><%= answer.question.user.username %></td>
+  <td><%= answer.question.votes.count %></td>
+  <td><%= answer.votes.count %></td>  
+  <td><a href="/questions/<%= answer.question.id %>">View Question</a></td>
+</tr>
+<% end %>
+</table>
